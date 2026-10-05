@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070503" />
+  <meta name="description" content="The Savory Bar by Anasley — artisan platters, individual bites and custom savory boxes." />
+  <title>The Savory Bar — Liquid Glass Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-glass">
+      <div class="loader-mark">SB</div>
+      <div class="loader-line"><span></span></div>
+      <div class="loader-copy">preparing the experience</div>
+    </div>
+  </div>
+
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+
+
+  <main>
+    <section class="hero section-pad" id="home">
+      <div class="hero-orb hero-orb-a" data-parallax="0.09"></div>
+      <div class="hero-orb hero-orb-b" data-parallax="-0.06"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal-group">
+          <div class="eyebrow reveal">Kurunegala · made for sharing</div>
+          <div class="hero-tech-title-host reveal" id="heroTechTitle"></div>
+          <div class="hero-tag reveal">Savor. Share. Celebrate.</div>
+          <p class="hero-lead reveal">Delicious bites crafted to make every moment memorable — artisan wraps, classic rolls & premium platters.</p>
+          <div class="hero-actions reveal">
+            <a class="cta cta-primary magnetic" href="#platters"><span>Explore platters</span><b>↗</b></a>
+            <a class="cta cta-ghost magnetic" href="#individual"><span>Build your box</span><b>＋</b></a>
+          </div>
+          <div class="hero-meta reveal">
+            <div class="mini-glass"><strong>Fresh</strong><span>made daily</span></div>
+            <div class="mini-glass"><strong>Custom</strong><span>box builder</span></div>
+            <div class="mini-glass"><strong>Direct</strong><span>WhatsApp order</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" id="heroVisual">
+          <div class="visual-stage tilt-card" data-tilt-strength="12">
+            <div class="visual-ring ring-one"></div>
+            <div class="visual-ring ring-two"></div>
+            <div class="visual-ring ring-three"></div>
+            <div class="hero-photo-frame glass-heavy">
+              <div class="hero-photo" aria-label="Savory platter"></div>
+              <div class="photo-sheen"></div>
+              <div class="floating-label label-a"><small>artisan</small><strong>platters</strong></div>
+              <div class="floating-label label-b"><small>from</small><strong>130 LKR</strong></div>
+            </div>
+            <div class="orbit-chip orbit-a">WRAPS</div>
+            <div class="orbit-chip orbit-b">ROLLS</div>
+            <div class="orbit-chip orbit-c">BITES</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-marquee glass-soft" aria-hidden="true">
+        <div class="marquee-track">
+          <span>ARTISAN WRAPS</span><i>✦</i><span>CLASSIC ROLLS</span><i>✦</i><span>PREMIUM PLATTERS</span><i>✦</i><span>CUSTOM BOXES</span><i>✦</i><span>FLOWER BOUQUETS</span><i>✦</i>
+          <span>ARTISAN WRAPS</span><i>✦</i><span>CLASSIC ROLLS</span><i>✦</i><span>PREMIUM PLATTERS</span><i>✦</i><span>CUSTOM BOXES</span><i>✦</i><span>FLOWER BOUQUETS</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="platters">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Signature collection</div>
+            <h2>Platters with <em>presence.</em></h2>
+          </div>
+          <p>Built for tea tables, office meetings, birthdays and gatherings. Hover the cards to reveal the glass depth.</p>
+        </div>
+        <div class="platters-grid" id="plattersGrid"></div>
+      </div>
+    </section>
+
+    <section class="section-pad gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">From our kitchen</div>
+            <h2>A closer look at the <em>details.</em></h2>
+          </div>
+          <p>Fresh textures, packed boxes and signature combinations — presented as an animated glass bento gallery.</p>
+        </div>
+        <div class="food-flip-grid" id="galleryGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="individual">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">À la carte · fresh daily</div>
+            <h2>Individual bites, <em>your way.</em></h2>
+          </div>
+          <p>For individual items, packaging and transportation cost will be added.</p>
+        </div>
+
+        <div class="bite-rail glass reveal" id="biteRail"></div>
+
+        <div class="builder-shell glass-heavy reveal" id="builder">
+          <div class="builder-head">
+            <div>
+              <div class="eyebrow">Interactive order studio</div>
+              <h3>Build Your Custom Box</h3>
+              <p>Mix and match your favorite items — we’ll pack them in appropriate boxes.</p>
+            </div>
+            <div class="builder-status glass-soft"><span class="pulse-dot"></span><strong>Live total</strong><small>updates instantly</small></div>
+          </div>
+
+          <div class="box-info-grid">
+            <article class="glass glass-card tilt-card reveal" data-tilt-strength="5">
+              <span class="card-index">01</span>
+              <h4>Small Box <em>250 LKR</em></h4>
+              <p>8–10 Rolls or Patties · 12 Cutlets · 3–4 Sandwiches or Mini Burgers · 6–8 Wraps</p>
+            </article>
+            <article class="glass glass-card tilt-card reveal" data-tilt-strength="5">
+              <span class="card-index">02</span>
+              <h4>Large Box <em>300 LKR</em></h4>
+              <p>18–23 items (mix of different items) — perfect for family gatherings & parties.</p>
+            </article>
+          </div>
+
+          <div class="preference-panel glass-soft">
+            <div class="preference-block">
+              <span class="pref-title">Fulfilment</span>
+              <label class="choice-pill"><input type="radio" name="deliveryType" value="delivery" checked><span>Delivery</span><b>+250 LKR</b></label>
+              <label class="choice-pill"><input type="radio" name="deliveryType" value="pickup"><span>Self pickup</span><b>Free</b></label>
+            </div>
+            <div class="preference-block">
+              <span class="pref-title">Box preference</span>
+              <label class="choice-pill"><input type="radio" name="boxPreference" value="auto" checked><span>Auto</span><b>optimized</b></label>
+              <label class="choice-pill"><input type="radio" name="boxPreference" value="large"><span>Large</span><b>preferred</b></label>
+              <label class="choice-pill"><input type="radio" name="boxPreference" value="small"><span>Small</span><b>preferred</b></label>
+            </div>
+          </div>
+
+          <button class="bouquet-toggle glass magnetic" id="bouquetToggle" type="button">
+            <span class="bouquet-icon">✿</span>
+            <span><strong>Add Flower Bouquet</strong><small>optional add-on</small></span>
+            <b>+6,500 LKR</b>
+            <i id="bouquetState">Add</i>
+          </button>
+
+          <div class="builder-grid">
+            <div class="selector-panel glass">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">Choose quantities</span>
+                  <h4>Select Items</h4>
+                </div>
+                <label class="search-glass"><span>⌕</span><input id="itemSearch" type="search" placeholder="Search bites..." autocomplete="off"></label>
+              </div>
+              <div class="selector-grid" id="selectorGrid"></div>
+            </div>
+
+            <aside class="summary-panel glass-heavy" id="summaryPanel">
+              <div class="summary-head">
+                <div>
+                  <span class="eyebrow">Order summary</span>
+                  <h4>Your Box</h4>
+                </div>
+                <div class="cart-bubble" id="cartCount">0</div>
+              </div>
+              <div class="selected-list" id="selectedList"><div class="empty-state">No items selected yet.</div></div>
+              <div class="breakdown" id="boxBreakdown"></div>
+              <div class="summary-lines">
+                <div><span>Items subtotal</span><b id="itemsSubtotal">0 LKR</b></div>
+                <div><span>Box cost</span><b id="boxCost">0 LKR</b></div>
+                <div><span>Travel fee</span><b id="travelFee">250 LKR</b></div>
+                <div id="bouquetCostRow" hidden><span>Flower bouquet</span><b>6,500 LKR</b></div>
+              </div>
+              <div class="grand-total glass-soft"><span>Grand total</span><strong id="grandTotal" data-value="0">0 LKR</strong></div>
+              <div class="summary-actions">
+                <button class="action action-muted magnetic" id="resetOrder" type="button">Reset</button>
+                <button class="action action-outline magnetic" id="printOrder" type="button">PDF / Print</button>
+                <button class="action action-primary magnetic" id="whatsappOrder" type="button">WhatsApp ↗</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="testimonials">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Happy customers</div>
+            <h2>Small notes. <em>Big love.</em></h2>
+          </div>
+          <p>Real feedback from customers who ordered the bites, wraps and platters.</p>
+        </div>
+        <div class="testimonial-grid" id="testimonialGrid"></div>
+      </div>
+    </section>
+
+    <section class="section-pad contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card glass-heavy reveal tilt-card" data-tilt-strength="3">
+          <div class="contact-glow"></div>
+          <div class="contact-copy">
+            <div class="eyebrow">Connect & order</div>
+            <h2>Make the next table <em>worth gathering around.</em></h2>
+            <p>Order directly through WhatsApp or follow The Savory Bar on Instagram, TikTok and Facebook.</p>
+            <div class="contact-actions">
+              <a class="cta cta-primary magnetic" href="https://wa.me/94705659555" target="_blank" rel="noopener noreferrer"><span>WhatsApp order</span><b>↗</b></a>
+              <a class="cta cta-ghost magnetic" href="https://www.instagram.com/the.savory.bar/" target="_blank" rel="noopener noreferrer"><span>@the.savory.bar</span><b>◎</b></a>
+            </div>
+          </div>
+          <div class="contact-links">
+            <a class="social-glass magnetic" href="https://wa.me/94705659555" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>+94 70 565 9555</strong><b>↗</b></a>
+            <a class="social-glass magnetic" href="https://www.instagram.com/the.savory.bar/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>@the.savory.bar</strong><b>↗</b></a>
+            <a class="social-glass magnetic" href="https://www.tiktok.com/@the.savory.bar" target="_blank" rel="noopener noreferrer"><span>TikTok</span><strong>@the.savory.bar</strong><b>↗</b></a>
+            <a class="social-glass magnetic" href="https://www.facebook.com/profile.php?id=61591422501875&sk=directory_links" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Facebook Page</strong><b>↗</b></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>THE SAVORY BAR</strong><span>by Anasley</span></div>
+      <p>© 2025 THE SAVORY BAR by Anasley — crafted with warmth & flavor</p>
+      <p>Savor. Share. Celebrate.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top glass-button magnetic" id="scrollTop" type="button" aria-label="Scroll to top">↑</button>
+
+  <aside class="bouquet-float glass-heavy" id="bouquetFloat" aria-live="polite">
+    <button type="button" id="removeBouquet" aria-label="Remove bouquet">×</button>
+    <div class="bouquet-art">✿</div>
+    <span>Flower Bouquet</span>
+    <strong>6,500 LKR</strong>
+  </aside>
+
+  <div class="toast glass-heavy" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
